@@ -1,0 +1,8 @@
+local plr = game:GetService'Players'.LocalPlayer
+   repeat wait() until plr.Character ~= nil
+plr.Character:WaitForChild'Humanoid'.StateChanged:Connect(function(old,new)
+   if new == Enum.HumanoidStateType.Landed and autojumpmpt then
+       plr.Character:WaitForChild'Humanoid':ChangeState("Jumping")
+   end
+end)
+end
